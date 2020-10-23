@@ -1,0 +1,418 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+body{
+  font-family: 'Pacifico', cursive;
+  overflow: hidden;
+  color: #fff;
+}
+* { 
+  color:#fff; 
+  text-decoration: none;
+}
+
+.bgoverlay{
+  background: #fadcac;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.container{
+  position: relative;
+  margin: 180px auto 0 auto;
+  width: 200px;
+}
+
+
+.ico{
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.open .ico{
+  -webkit-animation: open 4s;
+          animation: open 4s;
+  -webkit-transform: scale(20);
+          transform: scale(20);
+}
+
+.ico .title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -72px;
+  margin-top: -43px;
+  z-index: 4;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(121, 117, 117, 0.205);
+}
+.open .ico .title{
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  top:-100px;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  position: absolute;
+  top:0;
+  left:0;
+}
+.ico:before,
+.ico:after,
+.ico2:before,
+.ico2:after{
+  display: block;
+  font-size: 12.5em;
+  color: #e84a5f;
+  content: "\f004";
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ico2:before,
+.ico2:after{
+  color: #ff847c;
+}
+.ico:before{
+  z-index: 3;
+}
+.ico:after{
+  -webkit-animation: explode 4s infinite;
+          animation: explode 4s infinite;
+}
+
+
+.ico2:before{
+  -webkit-animation: explodeSmall 3s infinite;
+          animation: explodeSmall 3s infinite;
+}
+.ico2:after{
+  -webkit-animation: explodeSmall 2s infinite;
+          animation: explodeSmall 2s infinite;
+}
+
+
+.endtext{
+  opacity:0;
+  position: absolute;
+  top:-100px;
+  width:100%;
+}
+.open .endtext{
+  opacity: 1;
+  -webkit-animation: show 5s;
+          animation: show 5s;
+}
+.endtext .close{
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.endtext h1,
+.endtext h2,
+.endtext h3{
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+  text-align: center;
+  font-weight: normal;
+}
+.endtext h1{
+  font-size: 50px;
+}
+.endtext h2{
+  font-size: 30px;
+}
+.endtext h3{
+  font-size: 20px;
+}
+
+
+@-webkit-keyframes explode {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: scale(1.6);
+              transform: scale(1.6);
+      opacity: 0;
+    }
+}
+
+
+@keyframes explode {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: scale(1.6);
+              transform: scale(1.6);
+      opacity: 0;
+    }
+}
+@-webkit-keyframes explodeSmall {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      opacity: 0;
+    }
+}
+@keyframes explodeSmall {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      opacity: 0;
+    }
+}
+
+
+@-webkit-keyframes open {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    to {
+      -webkit-transform: scale(10);
+              transform: scale(10);
+    }
+}
+
+
+@keyframes open {
+    from {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    to {
+      -webkit-transform: scale(10);
+              transform: scale(10);
+    }
+}
+
+@-webkit-keyframes show {
+    from {
+      opacity: 0;
+      top: -100px;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes show {
+    from {
+      opacity: 0;
+      top: -100px;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.g-snows {
+  width: 100vw;
+  height: 100vh;
+  background-color: navy;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(navy), to(darkgray));
+  background-image: linear-gradient(to bottom, navy, darkgray);
+}
+
+.g-snows > li {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  border-radius: 100%;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  -webkit-animation-name: snow-drop;
+          animation-name: snow-drop;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.g-snows > li:nth-child(1) {
+  left: 40%;
+  width: 2px;
+  height: 2px;
+  -webkit-animation-duration: 6810ms;
+          animation-duration: 6810ms;
+  -webkit-animation-delay: 1393ms;
+          animation-delay: 1393ms;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.g-snows > li:nth-child(2) {
+  left: 80%;
+  width: 8px;
+  height: 8px;
+  -webkit-animation-duration: 5005ms;
+          animation-duration: 5005ms;
+  -webkit-animation-delay: 123ms;
+          animation-delay: 123ms;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+.g-snows > li:nth-child(3) {
+  left: 28%;
+  width: 13px;
+  height: 13px;
+  -webkit-animation-duration: 10000ms;
+          animation-duration: 10000ms;
+  -webkit-animation-delay: 4283ms;
+          animation-delay: 4283ms;
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+}
+.g-snows > li:nth-child(4) {
+  left: 16%;
+  width: 15px;
+  height: 15px;
+  -webkit-animation-duration: 7139ms;
+          animation-duration: 7139ms;
+  -webkit-animation-delay: 4935ms;
+          animation-delay: 4935ms;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+.g-snows > li:nth-child(5) {
+  left: 21%;
+  width: 1px;
+  height: 1px;
+  -webkit-animation-duration: 6939ms;
+          animation-duration: 6939ms;
+  -webkit-animation-delay: 3632ms;
+          animation-delay: 3632ms;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+
+@-webkit-keyframes snow-drop {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 0.5;
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 15px;
+  }
+  20% {
+    margin-left: 20px;
+  }
+  25% {
+    -webkit-transform: translate(0, 166.6666666667px);
+            transform: translate(0, 166.6666666667px);
+    opacity: 0.75;
+  }
+  30% {
+    margin-left: 15px;
+  }
+  40% {
+    margin-left: 0;
+  }
+  50% {
+    -webkit-transform: translate(0, 333.3333333333px);
+            transform: translate(0, 333.3333333333px);
+    opacity: 1;
+    margin-left: -15px;
+  }
+  60% {
+    margin-left: -20px;
+  }
+  70% {
+    margin-left: -15px;
+  }
+  75% {
+    -webkit-transform: translate(0, 500px);
+            transform: translate(0, 500px);
+    opacity: 0.5;
+  }
+  80% {
+    margin-left: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 666.6666666667px);
+            transform: translate(0, 666.6666666667px);
+    opacity: 0;
+  }
+}
+
+@keyframes snow-drop {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    opacity: 0.5;
+    margin-left: 0;
+  }
+  10% {
+    margin-left: 15px;
+  }
+  20% {
+    margin-left: 20px;
+  }
+  25% {
+    -webkit-transform: translate(0, 166.6666666667px);
+            transform: translate(0, 166.6666666667px);
+    opacity: 0.75;
+  }
+  30% {
+    margin-left: 15px;
+  }
+  40% {
+    margin-left: 0;
+  }
+  50% {
+    -webkit-transform: translate(0, 333.3333333333px);
+            transform: translate(0, 333.3333333333px);
+    opacity: 1;
+    margin-left: -15px;
+  }
+  60% {
+    margin-left: -20px;
+  }
+  70% {
+    margin-left: -15px;
+  }
+  75% {
+    -webkit-transform: translate(0, 500px);
+            transform: translate(0, 500px);
+    opacity: 0.5;
+  }
+  80% {
+    margin-left: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 666.6666666667px);
+            transform: translate(0, 666.6666666667px);
+    opacity: 0;
+  }
+}
